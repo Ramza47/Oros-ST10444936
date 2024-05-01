@@ -54,7 +54,7 @@
             app:srcCompat="@drawable/welcome" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/startButton"
             android:layout_width="150dp"
             android:layout_height="77dp"
             android:layout_marginStart="131dp"

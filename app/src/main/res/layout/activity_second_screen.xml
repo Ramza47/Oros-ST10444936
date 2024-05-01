@@ -18,11 +18,28 @@
         android:background="#CFC350"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="192dp"
+            android:layout_height="358dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="109dp"
+            android:layout_marginBottom="333dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/welcome" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/feedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="47dp"
@@ -36,7 +53,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/cleanButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="158dp"
@@ -51,7 +68,7 @@
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/playButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="286dp"
@@ -66,7 +83,7 @@
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/feedTextView"
             android:layout_width="89dp"
             android:layout_height="44dp"
             android:layout_marginStart="46dp"
@@ -80,7 +97,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/cleanTextView"
             android:layout_width="86dp"
             android:layout_height="48dp"
             android:layout_marginStart="161dp"
@@ -94,7 +111,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/playTextView"
             android:layout_width="88dp"
             android:layout_height="50dp"
             android:layout_marginStart="286dp"
