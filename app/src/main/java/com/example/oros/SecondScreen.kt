@@ -40,7 +40,7 @@ class SecondScreen : AppCompatActivity() {
             feedTextView.text = getString(R.string.feed)
 
             // Updates the play TextView
-            playTextView.text = getString(R.string.play)
+            playTextView.text = getString(R.string.Play)
 
 
             // Logic for the Clean Button

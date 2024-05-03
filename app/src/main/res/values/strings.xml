@@ -50,7 +50,7 @@
     <string name="feed">Feed</string>
     <string name="clean">Clean</string>
     <string name="play">Play</string>
-    <string name="Feed">feed</string>
-    <string name="Clean">Clean</string>
-    <string name="Play">Play</string>
+    <string name="Feed">Thank you, I have eaten enough!</string>
+    <string name="Clean">All this playing made me dirty. Please wash me?</string>
+    <string name="Play">Please play with me!</string>
 </resources>
