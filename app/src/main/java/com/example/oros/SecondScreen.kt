@@ -1,14 +1,25 @@
 package com.example.oros
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
 class SecondScreen : AppCompatActivity() {
 
+    private lateinit var feedProgressBar: ProgressBar
+    private lateinit var playProgressBar: ProgressBar
+    private lateinit var cleanProgressBar: ProgressBar
+
+    private var feedProgressStatus: Int = 0
+    private var playProgressStatus: Int = 0
+    private var cleanProgressStatus: Int = 0
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_screen)
@@ -23,11 +34,14 @@ class SecondScreen : AppCompatActivity() {
         val cleanTextView = findViewById<TextView>(R.id.cleanTextView)
         val playTextView = findViewById<TextView>(R.id.playTextView)
 
+        feedProgressBar = findViewById(R.id.feedprogressBar)
+        cleanProgressBar = findViewById(R.id.cleanprogressBar)
+        playProgressBar = findViewById(R.id.playprogressBar)
 
         // This Retrieves the message passed from the first screen
         val feedMessage = intent.getStringExtra("FEED_MESSAGE")
 
-        // This sets thhe text of the feed TextView to the feed message
+        // This sets the text of the feed TextView to the feed message
         feedTextView.text = feedMessage
 
         // Logic for the Feed button
@@ -64,6 +78,67 @@ class SecondScreen : AppCompatActivity() {
 
                     // updates the clean textview
                     cleanTextView.text = getString(R.string.clean)
+
+
+                    feedButton.setOnClickListener {
+                        feedProgressStatus = 0
+                        feedProgressBar.progress = feedProgressStatus
+                        Thread(Runnable {
+                            while (feedProgressStatus < 100) {
+                                feedProgressBar
+                                Thread.sleep(1000)
+                                runOnUiThread {
+                                    feedProgressBar.progress = feedProgressStatus
+                                }
+                            }
+                            runOnUiThread {
+                                // Updates feedTextView message
+                            }
+                        }).start()
+                    }
+
+
+                    cleanButton.setOnClickListener {
+                        cleanProgressStatus = 0
+                        cleanProgressBar.progress = cleanProgressStatus
+                        Thread(Runnable {
+                            while (cleanProgressStatus < 100) {
+                                cleanProgressStatus += 5
+                                Thread.sleep(1000)
+                                runOnUiThread {
+                                    cleanProgressBar.progress =
+                                        cleanProgressStatus
+                                }
+                            }
+                            runOnUiThread {
+                                // Updates the cleanTextView message
+                            }
+                        }).start()
+                    }
+
+                    playButton.setOnClickListener {
+                        playProgressStatus =
+                            0
+                        playProgressBar.progress =
+                            playProgressStatus
+
+                        Thread(Runnable {
+                            while (playProgressStatus < 100) {
+                                playProgressStatus += 5
+                                Thread.sleep(
+                                    1000
+                                )
+
+                                runOnUiThread {
+                                    playProgressBar.progress =
+                                        playProgressStatus
+                                }
+                            }
+                            runOnUiThread {
+                                // Update playTextView message
+                            }
+                        }).start()
+                    }
                 }
             }
         }
